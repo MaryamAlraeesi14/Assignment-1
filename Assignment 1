@@ -1,0 +1,219 @@
+class Customer:
+    """
+    Class representing a Customer in the Delivery Management System.
+    """
+    def __init__(self, customerID, name, email, phoneNumber, address):
+        # Constructor to initialize customer attributes
+        self.__customerID = customerID
+        self.__name = name
+        self.__email = email
+        self.__phoneNumber = phoneNumber
+        self.__address = address
+
+    # Setter methods
+    def set_customerID(self, customerID):
+        self.__customerID = customerID
+
+    def set_name(self, name):
+        self.__name = name
+
+    def set_email(self, email):
+        self.__email = email
+
+    def set_phoneNumber(self, phoneNumber):
+        self.__phoneNumber = phoneNumber
+
+    def set_address(self, address):
+        self.__address = address
+
+    # Getter methods
+    def get_customerID(self):
+        return self.__customerID
+
+    def get_name(self):
+        return self.__name
+
+    def get_email(self):
+        return self.__email
+
+    def get_phoneNumber(self):
+        return self.__phoneNumber
+
+    def get_address(self):
+        return self.__address
+
+    # Function to update customer details
+    def update_details(self):
+        pass  # This function would allow the customer to update their details
+
+    # Function to get customer details
+    def get_details(self):
+        pass  # This function would return the customer's details
+
+
+class Order:
+    """
+    Class representing an Order in the Delivery Management System.
+    """
+    def __init__(self, orderID, orderDate, totalAmount, deliveryAddress, customer):
+        # Constructor to initialize order attributes
+        self.__orderID = orderID
+        self.__orderDate = orderDate
+        self.__totalAmount = totalAmount
+        self.__deliveryAddress = deliveryAddress
+        self.__customer = customer  # Reference to Customer class
+
+    # Setter methods
+    def set_orderID(self, orderID):
+        self.__orderID = orderID
+
+    def set_orderDate(self, orderDate):
+        self.__orderDate = orderDate
+
+    def set_totalAmount(self, totalAmount):
+        self.__totalAmount = totalAmount
+
+    def set_deliveryAddress(self, deliveryAddress):
+        self.__deliveryAddress = deliveryAddress
+
+    def set_customer(self, customer):
+        self.__customer = customer
+
+    # Getter methods
+    def get_orderID(self):
+        return self.__orderID
+
+    def get_orderDate(self):
+        return self.__orderDate
+
+    def get_totalAmount(self):
+        return self.__totalAmount
+
+    def get_deliveryAddress(self):
+        return self.__deliveryAddress
+
+    def get_customer(self):
+        return self.__customer
+
+    # Function to create an order
+    def create_order(self):
+        pass  # This function would create a new order
+
+    # Function to calculate the total order amount
+    def calculate_total(self):
+        pass  # This function would calculate the total amount for the order
+
+
+class Payment:
+    """
+    Class representing a Payment in the Delivery Management System.
+    """
+    def __init__(self, paymentAmount, paymentDate, paymentStatus, paymentMethod, order):
+        # Constructor to initialize payment attributes
+        self.__paymentAmount = paymentAmount
+        self.__paymentDate = paymentDate
+        self.__paymentStatus = paymentStatus
+        self.__paymentMethod = paymentMethod
+        self.__order = order  # Reference to Order class
+
+    # Setter methods
+    def set_paymentAmount(self, paymentAmount):
+        self.__paymentAmount = paymentAmount
+
+    def set_paymentDate(self, paymentDate):
+        self.__paymentDate = paymentDate
+
+    def set_paymentStatus(self, paymentStatus):
+        self.__paymentStatus = paymentStatus
+
+    def set_paymentMethod(self, paymentMethod):
+        self.__paymentMethod = paymentMethod
+
+    def set_order(self, order):
+        self.__order = order
+
+    # Getter methods
+    def get_paymentAmount(self):
+        return self.__paymentAmount
+
+    def get_paymentDate(self):
+        return self.__paymentDate
+
+    def get_paymentStatus(self):
+        return self.__paymentStatus
+
+    def get_paymentMethod(self):
+        return self.__paymentMethod
+
+    def get_order(self):
+        return self.__order
+
+    # Function to process payment
+    def process_payment(self):
+        pass  # This function would process the payment for the order
+
+    # Function to verify payment status
+    def verify_payment(self):
+        pass  # This function would verify the status of the payment
+
+
+class DeliveryNote:
+    """
+    Class representing a Delivery Note in the Delivery Management System.
+    """
+    def __init__(self, deliveryNoteID, orderID, deliveryDate, address):
+        # Constructor to initialize delivery note attributes
+        self.__deliveryNoteID = deliveryNoteID
+        self.__orderID = orderID
+        self.__deliveryDate = deliveryDate
+        self.__address = address
+
+    # Setter methods
+    def set_deliveryNoteID(self, deliveryNoteID):
+        self.__deliveryNoteID = deliveryNoteID
+
+    def set_orderID(self, orderID):
+        self.__orderID = orderID
+
+    def set_deliveryDate(self, deliveryDate):
+        self.__deliveryDate = deliveryDate
+
+    def set_address(self, address):
+        self.__address = address
+
+    # Getter methods
+    def get_deliveryNoteID(self):
+        return self.__deliveryNoteID
+
+    def get_orderID(self):
+        return self.__orderID
+
+    def get_deliveryDate(self):
+        return self.__deliveryDate
+
+    def get_address(self):
+        return self.__address
+
+    # Function to generate the delivery note
+    def generate_note(self):
+        pass  # This function would generate the delivery note for the order
+
+    # Function to print the delivery note
+    def print_note(self):
+        pass  # This function would print the delivery note to be handed to the agent
+# Creating a Customer object
+customer1 = Customer(101, "John Doe", "john@example.com", "1234567890", "123 Elm Street")
+
+# Creating an Order object
+order1 = Order("ORD123", "2025-02-23", 150.00, "123 Elm Street", customer1)
+
+# Creating a Payment object
+payment1 = Payment(150.00, "2025-02-23", "Completed", "Credit Card", order1)
+
+# Creating a DeliveryNote object
+delivery_note1 = DeliveryNote("DN001", "ORD123", "2025-02-24", "123 Elm Street")
+
+# Accessing attributes using getter methods
+print(customer1.get_name())  # Output: John Doe
+print(order1.get_totalAmount())  # Output: 150.00
+
